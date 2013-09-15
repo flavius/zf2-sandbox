@@ -1,0 +1,9 @@
+<h2><?=$this->message;?></h2>
+<pre><?php 
+    if($this->display_exceptions) {
+        echo 'Code: ', $this->exception->getCode(), PHP_EOL;
+        echo 'Message: ', $this->escapehtml($this->exception->getMessage()), PHP_EOL;
+        echo 'Location: <input type="text" readonly size="128" style="border-style: none; background-color: #FFFFFF" value="',
+            $this->escapehtml($this->exception->getFile()), '">:', $this->exception->getLine(), PHP_EOL;
+    }
+?></pre>
